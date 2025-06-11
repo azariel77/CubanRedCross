@@ -1,0 +1,34 @@
+---
+import Layout from "../components/Layout.astro"
+const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+const noticias = await response.json();
+
+
+
+---
+
+<Layout titulo="Noticias de la Cruz Roja Cubana">
+    
+    
+    <h1>Noticias</h1>
+    {
+        noticias.map((noticia) => (
+            <div class="noticia">
+            <h2>{noticia.title}</h2>
+            <p><strong>Autor:</strong> {noticia.userId}</p>
+            <p>{noticia.body}</p>
+        </div>
+    ))
+}
+    </Layout>
+
+<style>
+    .noticia {
+        border: 1px solid #ccc;
+        padding: 16px;
+        margin-bottom: 16px; 
+        border-radius: 8px;
+    }
+    .noticia h2 {
+        margin-top: 0;
+    }
