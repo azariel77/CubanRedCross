@@ -1,0 +1,41 @@
+---
+// src/components/Carrusel.astro
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+const { children } = Astro.props;
+---
+
+<div class="swiper max-w-full mx-auto">
+  <div class="swiper-wrapper">
+    <slot />
+  </div>
+
+  <div class="swiper-button-prev text-red-600"></div>
+  <div class="swiper-button-next text-red-600"></div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<script type="module" is:inline>
+  import Swiper from 'swiper/bundle';
+
+  window.addEventListener('load', () => {
+    new Swiper('.swiper', {
+      loop: true,
+      spaceBetween: 20,
+      centeredSlides: true,
+      slidesPerView: 1,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      speed: 500,
+      effect: 'slide', // Puedes usar "fade" o "creative" si importas módulos
+    });
+  });
+</script>

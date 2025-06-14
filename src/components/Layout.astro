@@ -8,20 +8,21 @@ export interface Props {
 }
 ---
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-gray-100">
+<html lang="en" class=" h-full w-lg sm:w-full bg-gray-100">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="/logo/Cruz_Roja.svg.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cruz Roja Cubana - Organización humanitaria dedicada a brindar asistencia sin discriminación.">
     <meta name="keywords" content="Cruz Roja, humanitaria, asistencia, emergencia, salud">
     <meta name="author" content="Cruz Roja Cubana">
      <title>{titulo}</title>
 </head>
-<body class="flex flex-col min-h-screen">
-    <Header class="shadow-md"></Header>
-    <main class="flex-grow container mx-auto px-4 py-6">
+<body class="flex flex-col  w-full">
+    <Header class=""></Header>
+    <main class="flex-grow mt-16">
         <slot />
     </main>
-    <Footer class="bg-gray-800 text-white"></Footer>
+    <Footer class="" ></Footer>
 </body>
 </html>
