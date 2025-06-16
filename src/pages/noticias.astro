@@ -10,16 +10,8 @@ const noticias = await response.json();
 <Layout titulo="Noticias de la Cruz Roja Cubana">
     
     
-    <h1>Noticias</h1>
-    {
-        noticias.map((noticia) => (
-            <div class="noticia">
-            <h2>{noticia.title}</h2>
-            <p><strong>Autor:</strong> {noticia.userId}</p>
-            <p>{noticia.body}</p>
-        </div>
-    ))
-}
+    
+
     </Layout>
 
 <style>
