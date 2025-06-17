@@ -3,52 +3,36 @@
 import TimeLine from "../components/TimeLine.astro"
 import Layout from "../components/Layout.astro"
 import Carrusel from "../components/Carrusel.astro"
+import Header from "../components/header.astro"
+import Numeros from "../components/numeros.astro"
 ---
 
 <Layout titulo="Acerca de la Cruz Roja Cubana">
+    <Header class=""></Header>
     <div class="flex flex-col min-h-screen">
         <section class="about-section flex-grow">
             <div>
                 <Carrusel></Carrusel>
             </div>
-            <div class="about-text">
-                <h2>¿Quiénes somos?</h2>
-                <p>
-                    La Cruz Roja es una organización humanitaria global, presente en más de 190 países,
-                    dedicada a brindar asistencia sin discriminación a quienes más lo necesitan.
-                </p>
-                <p>
+            <!-- <div class="about-text">
+                <p class="font-bold text-3xl text-white bg-red-700">
                     Nuestra misión es prevenir y aliviar el sufrimiento humano, proteger la vida y la salud,
                     y garantizar el respeto a la dignidad humana, especialmente en tiempos de conflicto
                     armado y otras emergencias.
                 </p>
-                <p>En 1909 surgió la Cruz Roja Cubana, cuyo fundador, el insigne médico Diego Tamayo y Figueredo resulta ejemplo de consagración, amor y dedicación al trabajo. Este hombre de ciencia nació en Bayamo el 12 de octubre de 1853, y entre sus innumerables servicios a favor de la salud de la población se encuentra la introducción de la vacuna antirrábica. Mucho antes de dedicarse a estos menesteres, se entregó a su patria como miembro del Ejército Mambí, donde combate bajo las órdenes de "Calixto García" hasta caer prisionero, enfermo y herido. Por gestiones de su familia sale exiliado a España, donde cursa sus estudios de Medicina. Posteriormente, en 1887, regresa a Cuba desempeñándose como médico, y muere el 23 de octubre de 1926.
+               
+            </div> -->
+           
 
-                    El legado del doctor Diego Tamayo y Figueredo, al fundar la Cruz Roja Cubana, continuó bajo las órdenes de otros dignos cubanos, que al igual que él, han dado lo mejor de sí para aliviar el sufrimiento, para auxiliar las víctimas o simplemente para prevenir. En ese selecto grupo, vale la pena señalar al doctor Esmildo Gutiérrez Sánchez, quien nace en Ciudad de La habana coincidentemente un 23 de octubre, pero de 1938.
-                    
-                    En el seno de una familia de altos valores patrióticos y morales crece y se forma este médico, que una vez graduado se vincula a los programas de salud del gobierno revolucionario cubano. En 1976 inicia su colaboración con la Cruz Roja Cubana, convirtiéndose pronto en su secretario general. Años más tarde, en 1985 el Doctor Gutiérrez ocupa el cargo de vicepresidente del Consejo Ejecutivo de la Federación de Sociedades Nacionales de Cruz Roja y Media Luna Roja. Su dinamismo y abnegación estuvo presente en las múltiples y diversas misiones, en las que participó como directivo y miembro de la Cruz Roja. Este quehacer, unido a su sentido humanitario y de adhesión a los principios fundamentales del movimiento, le hicieron merecedor de la medalla Henry Dunant. Esta alta distinción del Movimiento Internacional, le fue conferida póstumamente por los miembros de la Comisión Permanente de la Cruz Roja y Media Luna Roja. El doctor Esmildo Gutiérrez Sánchez fallece el 9 de febrero de 1995, en Ciudad de La Habana.
-                    
-                    Juan José Vega Aguiar es otra de las figuras, que ha enaltecido la labor de la Cruz Roja Cubana por sus pruebas de humanismo, valentía y entrega. Desde muy joven, este sencillo hombre siempre soñó con ser médico, pero la situación económica familiar dejó trunca sus esperanzas. Tal vez por esto, buscó la aproximación a la medicina, a través de un curso para formar sanitarios. Años más tarde se hizo enfermero.
-                    
-                    Este noble empeño, en la vocación de salvar vidas, facilitó que su figura se hiciera muy popular en las playas de Santa Fé, Guanabo y Jamanitas, donde cuidaba de los bañistas en calidad de salvavidas. En 1951, durante el terremoto ocurrido en Ecuador, Vega sacaba a los sobrevivientes de entre los escombros, mientras la tierra temblaba bajo sus pies. Años después, en 1957, volvió a jugarle una mala pasada a la muerte para, amparado en el emblema de la Cruz Roja, entrar bajo las balas al Palacio Presidencial, y rescatar a un grupo de heridos de ambos bandos: asaltantes y soldados del Gobierno del Gral. Fulgencio Batista.
-                    
-                   
-                    
-                    Vega nació en La Habana en 1971, tras la unión de un carpintero y una modista. En más de 180 ocasiones fue condecorado por los servicios prestados en la Cruz Roja, de forma voluntaria y en diferentes países como es el caso de Jamaica y Siria, nación esta que le confirió una medalla por su labor de socorrista con las víctimas de la agresión israelí en la década del 80.
-                    
-                    Para Juan José Vega Aguiar, quien murió en la Habana, el 14 de noviembre de 1995, no hubo otro hecho más importante que salvar vidas. Por todo ello le fue otorgada la medalla de Henry Dunant.
-                    
-                    Nacido el 14 de febrero de 1926 en Ciudad de la Habana, el Dr. Armando Pena Pereira desde el triunfo de la Revolución se integró a la sanidad militar, durante la Crisis de Octubre se incorpora, por incentivo del doctor Cervantes, a la Cruz Roja, siendo el responsable de la capacitación de las brigadas sanitarias. Esta labor la realiza en el hospital Calixto García, al cual estuvo vinculado a la docencia.
-                    
-                    En 1989 participa, en representación de la Cruz Roja Cubana, en la reunión internacional sobre preparación para desastres, desarrollada en Alemania, en 1982 integro el Consejo Nacional de la Cruz Roja, cumpliendo misiones en Argelia, Perú y Laos.
-                     
-                    
-                    Sin lugar a dudas, la Cruz Roja tuvo en el doctor Pena un voluntario excepcional, autor de más de 30 publicaciones, entre ellos el libro que desde hace años es utilizado para la preparación de la membresía en primeros auxilios.
-                    
-                    Armando Pena Pereira fallecio en la capital cubana, el 5 de febrero de 1997, momentos en que desempeñaba el cargo de vicepresidente de la Sociedad Nacional Cubana de la Cruz Roja. Antes de morir se le otorgó, las órdenes por X, XX, XXV y XXX años de servicios destacados en esta institución. Por su actividad laboral, científica y docente fue merecedor de innumerables reconocimientos, entre ellos las órdenes "Frank País" y "Pepito Tey".</p>
-            </div>
-            <div class="ml-10 mt-8">
+            <div class=" mt-8">
+                <h1 class="mb-10 font-bold text-3xl bg-gradient-to-r from-red-950 via-red-700 to-red-400 text-white ml-0 p-2">Nuestra historia</h1>
                 <TimeLine></TimeLine>
+            </div>
+            <div class="grid grid-cols-4 mt-6 mr-6 ">
+                <Numeros h="1" p="Sede Nacional"></Numeros>
+                <Numeros h="15" p="Filiales Provinciales"></Numeros>
+                <Numeros h="168" p="Filiales Municipales"></Numeros>
+                <Numeros h="1437" p="Comites Locales"></Numeros>
             </div>
         </section>
     </div>
