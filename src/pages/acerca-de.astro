@@ -14,26 +14,34 @@ import Numeros from "../components/numeros.astro"
             <div>
                 <Carrusel></Carrusel>
             </div>
-            <!-- <div class="about-text">
-                <p class="font-bold text-3xl text-white bg-red-700">
-                    Nuestra misión es prevenir y aliviar el sufrimiento humano, proteger la vida y la salud,
-                    y garantizar el respeto a la dignidad humana, especialmente en tiempos de conflicto
-                    armado y otras emergencias.
-                </p>
-               
-            </div> -->
+            <div>
+                <h1 class="text-3xl ml-24 mt-16 mb-6">Misión</h1>
+                <div class="about-text grid grid-cols-2 font-light">
+                    <p class=" text-xl col-span-1 ml-24">
+                        Aliviar el sufrimiento Humano en todas las circunstancias, en particular en conflictos armados y en otras situaciones de urgencias, proteger la vida y la salud.
+                        Promover un sentimiento universal de solidaridad, especialmente con todos los que tengan necesidad de protección y asistencia.
+                    </p>
+                    <p class="text-xl col-span-1 ml-16 mr-10">
+                        Como Sociedad de Socorro, voluntaria, autónoma, auxiliar de los poderes públicos en el ámbito humanitario y especialmente de los Servicios Médicos de las Fuerzas Armadas Revolucionarias, de acuerdo con lo estipulado por el Primer Convenio de Ginebra, y como única  Sociedad Nacional de la Cruz Roja con capacidad para ejercer su actividad en el territorio de la República de Cuba.
+                    </p>
+                </div>
+            </div>
            
-
-            <div class=" mt-8">
+            <div class="my-12">
+                <h1 class="text-3xl  mb-4 text-center">Cruz Roja Cubana en números:</h1>
+                <div class="grid grid-cols-4 mt-6 mr-6 ">
+                    <Numeros h="1" p="Sede Nacional"></Numeros>
+                    <Numeros h="15" p="Filiales Provinciales"></Numeros>
+                    <Numeros h="168" p="Filiales Municipales"></Numeros>
+                    <Numeros h="1437" p="Comites Locales"></Numeros>
+                    
+                </div>
+            </div>
+            <div class=" mt-8 mb-24">
                 <h1 class="mb-10 font-bold text-3xl bg-gradient-to-r from-red-950 via-red-700 to-red-400 text-white ml-0 p-2">Nuestra historia</h1>
                 <TimeLine></TimeLine>
             </div>
-            <div class="grid grid-cols-4 mt-6 mr-6 ">
-                <Numeros h="1" p="Sede Nacional"></Numeros>
-                <Numeros h="15" p="Filiales Provinciales"></Numeros>
-                <Numeros h="168" p="Filiales Municipales"></Numeros>
-                <Numeros h="1437" p="Comites Locales"></Numeros>
-            </div>
+           
         </section>
     </div>
 </Layout>

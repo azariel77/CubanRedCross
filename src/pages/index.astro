@@ -53,26 +53,38 @@ const carrusel=[
 			<div class="absolute inset-0 flex items-center justify-center  sm:w-1/2  w-11/12 text-white text-center overflow-visible  z-10 px-4">
 				<div>
 					<h1 class="text-2xl sm:text-6xl sm:mb-6 font-bold  text-white">Bienvenido a la Cruz Roja Cubana</h1>
-					<p class="sm:text-4xl">Nuestra misión es brindar asistencia humanitaria sin discriminación.</p>
+					<p class="sm:text-4xl">Nuestra misión es aliviar el sufrimiento Humano en todas las circunstancias, en particular en conflictos armados y en otras situaciones de urgencias, proteger la vida y la salud.</p>
 					<p class="mb-2 sm:mb-4 sm:text-4xl">Conoce más sobre nuestras actividades y cómo puedes ayudar.</p>
-					<a href="/acerca-de" class="bg-red-700 text-white sm:text-2xl px-4 py-2 rounded hover:bg-red-800 transition-colors">Sobre nosotros</a>
+					<a href="/servicios" class="bg-red-700 text-white sm:text-2xl px-4 py-2 rounded hover:bg-red-800 transition-colors">Actividades</a>
 				</div>
 			</div>
 		</div>
-		<div class="container mx-auto p-4">
-			<h2 class="text-3xl font-bold mb-4"> Principios de la Cruz Roja Internacional</h2>
+		<div class=" mx-auto sm:w-full sm:mx-0 ">
+			<h2 class="text-3xl font-bold mb-4 bg-gradient-to-r from-red-950 via-red-700 to-red-400 text-white w-full"> Principios de la Cruz Roja Internacional</h2>
 		
-			<div class="sm:grid grid-cols-7 " >
-				
-					<Cards titulo="Humanidad" imagen="/iconos/IFRC-Icons_Humanity.png" />
-					<Cards titulo="Imparcialidad" imagen="/iconos/IFRC-Icons_Impartiality.png" />
-					<Cards titulo="Neutralidad" imagen="/iconos/IFRC-icons-colour_Neutrality.png" />
-					<Cards titulo="Independencia" imagen="/iconos/IFRC-Icons_Independence.png" />
-					<Cards titulo="Voluntariado" imagen="/iconos/IFRC-icons-colour_Voluntary-service.png" />
-					<Cards titulo="Unidad" imagen="/iconos/IFRC-icons-colour_Unity.png" />
-					<Cards titulo="Universalidad" imagen="/iconos/IFRC-icons-colour_Universality.png" />
-				  
-			</div>
+			<div class="sm:grid grid-cols-7 gap-4">
+  <div class="principio-card opacity-0 translate-y-10 transition-all duration-500 ease-out">
+    <Cards titulo="Humanidad" imagen="/iconos/IFRC-Icons_Humanity.png" />
+  </div>
+  <div class="principio-card opacity-0 translate-y-10 transition-all duration-500 ease-out">
+    <Cards titulo="Imparcialidad" imagen="/iconos/IFRC-Icons_Impartiality.png" />
+  </div>
+  <div class="principio-card opacity-0 translate-y-10 transition-all duration-500 ease-out">
+    <Cards titulo="Neutralidad" imagen="/iconos/IFRC-icons-colour_Neutrality.png" />
+  </div>
+  <div class="principio-card opacity-0 translate-y-10 transition-all duration-500 ease-out">
+    <Cards titulo="Independencia" imagen="/iconos/IFRC-Icons_Independence.png" />
+  </div>
+  <div class="principio-card opacity-0 translate-y-10 transition-all duration-500 ease-out">
+    <Cards titulo="Voluntariado" imagen="/iconos/IFRC-icons-colour_Voluntary-service.png" />
+  </div>
+  <div class="principio-card opacity-0 translate-y-10 transition-all duration-500 ease-out">
+    <Cards titulo="Unidad" imagen="/iconos/IFRC-icons-colour_Unity.png" />
+  </div>
+  <div class="principio-card opacity-0 translate-y-10 transition-all duration-500 ease-out">
+    <Cards titulo="Universalidad" imagen="/iconos/IFRC-icons-colour_Universality.png" />
+  </div>
+</div>
 		  </div>
 		  <div class="grid grid-cols-2 grid-rows-1 bg-red-700 ">
 			<div class="col-span-1 text-center sm:text-center mt-6 justify-center text-white ">
@@ -124,3 +136,17 @@ const carrusel=[
     .noticia h2 {
         margin-top: 0;
     }
+</style>
+
+<script type="module">
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+        entry.target.classList.remove('opacity-0', 'translate-y-10');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.principio-card').forEach(el => observer.observe(el));
+</script>

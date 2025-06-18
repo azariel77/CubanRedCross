@@ -15,5 +15,24 @@ module.exports = {
     },
   },
   },
-  plugins: [],
+  plugins: [
+    function({ addUtilities }) {
+      const newUtilities = {
+        '.text-align-last-justify': {
+          'text-align-last': 'justify',
+          '-webkit-text-align-last': 'justify',
+          '-moz-text-align-last': 'justify',
+          'text-justify': 'inter-word',
+          '-webkit-text-justify': 'inter-word',
+          '-moz-text-justify': 'inter-word'
+        },
+        '.hyphens-auto': {
+          'hyphens': 'auto',
+          '-webkit-hyphens': 'auto',
+          '-ms-hyphens': 'auto'
+        }
+      }
+      addUtilities(newUtilities)
+    }
+  ],
 };

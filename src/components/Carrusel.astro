@@ -10,8 +10,8 @@ const images = [
 ];
 ---
 
-<div class="relative w-full overflow-hidden">
-  <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out">
+<div class="relative w-full overflow-hidden ">
+  <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out ">
     {images.map((src) => (
       <div class="w-full flex-shrink-0 h-64 md:h-96">
         <img src={src} alt="Slide" class="w-full h-full object-cover brightness-50" loading="lazy" />
@@ -45,6 +45,8 @@ const images = [
   const slides = track.children;
   const totalSlides = slides.length;
 
+  const indicators = document.querySelectorAll('[data-carousel-slide-to]');
+
   document.getElementById('nextBtn').addEventListener('click', () => {
     currentIndex = (currentIndex + 1) % totalSlides;
     updateSlide();
@@ -57,10 +59,39 @@ const images = [
 
   function updateSlide() {
     track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    updateIndicators();
   }
+
+  // Funcion para actualizar el estado aria-current y clases de indicadores
+  function updateIndicators() {
+    indicators.forEach((btn, idx) => {
+      const isActive = idx === currentIndex;
+      btn.setAttribute('aria-current', isActive);
+      btn.classList.toggle('bg-white/70', isActive);
+      btn.classList.toggle('bg-white/50', !isActive);
+    });
+  }
+
+  // Agregar manejadores a botones de indicadores
+  indicators.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      currentIndex = parseInt(btn.dataset.carouselSlideTo, 10);
+      updateSlide();
+    });
+  });
+
+  // Auto slide cada 2 segundos
+  const autoSlideInterval = setInterval(() => {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateSlide();
+  }, 3000);
+
+  // Limpiar intervalo al salir de la página
+  window.addEventListener('beforeunload', () => clearInterval(autoSlideInterval));
 
   // Slide in on load
   window.addEventListener('DOMContentLoaded', () => {
     track.classList.add('translate-x-0');
+    updateIndicators();
   });
 </script>

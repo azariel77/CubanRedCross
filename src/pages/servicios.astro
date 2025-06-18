@@ -1,7 +1,44 @@
 ---
+import Header from "../components/header.astro"
 import Layout from "../components/Layout.astro"
+import { MotionEffectImageGridDemo } from "../components/motion-effect-image-grid-demo"
+import ProgramaCard from "../components/ProgramaCard.astro"
+import { MotionEffect } from '@/components/animate-ui/effects/motion-effect';
+const programas = [
+  { titulo: "Difusión del Derecho Internacional Humanitario", descripcion: "Promovemos el conocimiento y respeto del DIH en todos los sectores de la sociedad." },
+  { titulo: "Restablecimiento de Contactos Familiares (RCF) y Búsqueda", descripcion: "Ayudamos a las personas a reencontrarse con sus seres queridos tras conflictos o desastres." },
+  { titulo: "Atención al Refugiado y Migraciones", descripcion: "Asistimos a personas en movilidad con protección, orientación y ayuda humanitaria." },
+  { titulo: "Voluntariado", descripcion: "Impulsamos el desarrollo de capacidades y la acción solidaria de nuestros voluntarios." },
+  { titulo: "Cruz Roja Juvenil", descripcion: "Involucramos a jóvenes en acciones de liderazgo, servicio y formación." },
+  { titulo: "Consejo Asesor de Veteranos", descripcion: "Rescatamos la experiencia y guía de quienes han formado parte histórica del movimiento." },
+  { titulo: "Operaciones y Socorro", descripcion: "Coordinamos respuestas rápidas y efectivas ante emergencias y desastres." },
+  { titulo: "Seguridad Acuática", descripcion: "Promovemos la prevención de accidentes en entornos acuáticos y entrenamos rescatistas." },
+  { titulo: "Instrucción", descripcion: "Capacitamos a la población en temas clave como primeros auxilios, gestión de riesgos y más." },
+  { titulo: "Preparación Comunitaria", descripcion: "Fortalecemos la resiliencia comunitaria ante situaciones de emergencia." },
+  { titulo: "Programa de Cambio Climático", descripcion: "Sensibilizamos y preparamos a comunidades ante los efectos del cambio climático." },
+  { titulo: "Apoyo Psicológico", descripcion: "Brindamos asistencia emocional en contextos de crisis y desastre." },
+  { titulo: "Programas de Salud", descripcion: "Fomentamos prácticas saludables y facilitamos el acceso a servicios básicos." },
+  { titulo: "Ayuda Humanitaria", descripcion: "Distribuimos recursos esenciales a personas vulnerables en momentos críticos." },
+  { titulo: "Proyectos de Colaboración", descripcion: "Trabajamos con instituciones y socios en iniciativas conjuntas de desarrollo." },
+  { titulo: "Programa de Seguridad Vial (Vía a la Vida)", descripcion: "Educamos para reducir accidentes viales y promover cultura vial responsable." },
+]
 ---
 
-<Layout titulo="Actividades">
-    
+<Layout titulo="Programas de la Cruz Roja Cubana">
+    <Header></Header>
+  <section class="py-10 px-4 bg-white">
+    <!-- <MotionEffectImageGridDemo /> -->
+    <div class="ml-50-container">
+      <MotionEffectImageGridDemo client:load />
+    </div>
+   <div class="container mx-auto px-4 py-10 ">
+
+       <h1 class="text-4xl font-bold text-center text-white bg-gradient-to-r from-red-950 via-red-700 to-red-400 mb-10">Nuestros Programas</h1>
+       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+           {programas.map((programa) => (
+               <ProgramaCard titulo={programa.titulo} descripcion={programa.descripcion} />
+            ))}
+    </div>
+</div>
+  </section>
 </Layout>
