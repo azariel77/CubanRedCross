@@ -1,0 +1,91 @@
+---
+import Header from "../components/header.astro"
+import Layout from "../components/Layout.astro"
+import ProgramaCard from "../components/ProgramaCard.astro"
+const programas = [
+  { titulo: "PARTICIPATIVO", descripcion: "La participación del voluntariado en Cruz Roja se concreta tanto en la actividad como en la vida asociativa y en los órganos de gobierno de la Institución. Para ello, Cruz Roja establece los cauces y mecanismos adecuados que garanticen que esta participación se concrete en todos los ámbitos territoriales." },
+  { titulo: "COMPROMETIDO", descripcion: "Más allá de la actividad en la que interviene directamente, el voluntariado debe mantener un compromiso con los más vulnerables a través de Cruz Roja. En la creación y consolidación de este compromiso, Cruz Roja desempeña un papel fundamental. Se trata de potenciar la afinidad e identificación del voluntariado con nuestros principios, ideales, y filosofía de acción." },
+  { titulo: "CAPACITADO", descripcion: "Para el adecuado desarrollo de su acción, el voluntariado de Cruz Roja está convenientemente formado. Ello exige una clara disposición y compromiso por parte del voluntariado para realizar la formación que habrá de capacitarle para la actividad que debe desarrollar." },
+  { titulo: "MOTIVADO", descripcion: "La motivación constituye uno de los fundamentos para asegurar la permanencia del voluntariado. Requiere una adecuada atención de las expectativas y necesidades del voluntariado por parte de la Institución, así como un seguimiento periódico y continuo de su acción. " },
+  { titulo: "DISPONIBLE", descripcion: "Entendemos la disponibilidad del voluntariado no sólo como el tiempo que puede aportar para el desarrollo de su acción, sino también como la capacidad para contraer compromisos con la Institución: formación, participación, asunción de nuevas responsabilidades y tareas." },
+  { titulo: "POLIVALENTE", descripcion: "Debemos promover un voluntariado polivalente en la acción, siempre y cuando éste posea la capacitación adecuada y cumpla con los perfiles y requisitos necesarios para ello." },
+  { titulo: "GRUPAL", descripcion: "La propia naturaleza de Cruz Roja justifica y exige el trabajo en equipo. Se trata, en definitiva, de mantener la coherencia entre el contenido de nuestro mensaje y el método que utilizamos para transmitirlo y hacerlo efectivo." },
+  
+]
+---
+
+<Layout titulo="voluntariado">
+    <Header></Header>
+    <div >
+
+        <div class="relative overflow-hidden w-lg sm:w-full md:w-full ">
+            <img src="/voluntariado.jpg" alt="cruz roja cubana" class=" h-36 sm:h-80  w-full  relative z-0" />
+            <div class="absolute inset-0 bg-red-950/80"></div>
+            
+            <div class="absolute inset-0 flex items-center justify-center     text-white text-center overflow-visible  z-10 ">
+                
+            <h1 class="text-6xl sm:text-9xl text-center sm:mb-6 font-bold  text-white">VOLUNTARIADO</h1>
+            
+     </div>
+    </div>
+    <div class="font-light text-center ">
+        <div class=" mx- animate-fade-in-up px-4">
+            <p class=" text-lg text-justify leading-relaxed tracking-wide p-4">
+                La acción voluntaria en Cruz Roja compromete no sólo a la persona que se integra como voluntaria en la Institución, sino también a la propia Institución, que debe garantizar que dicha acción se desarrolle en un marco favorable para ambos.
+                
+                Podemos concretar en siete principios básicos el modelo de voluntariado que queremos en Cruz Roja:
+            </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {programas.map((programa) => (
+                <ProgramaCard titulo={programa.titulo} descripcion={programa.descripcion} />
+            ))}
+     </div>
+     <div class=" mx- animate-fade-in-up  my-4">
+        <p class=" text-lg text-justify leading-relaxed font-bold tracking-wide text-white bg-red-700 p-4  ">
+            
+            Cruz Roja define a su voluntariado como:<br> "toda persona que, de una forma reflexiva, solidaria y desinteresada, desarrolla una actividad en beneficio de la comunidad, dentro del marco de los fines y objetivos de Cruz Roja Cubana".
+
+        </p>
+        <div class="text-center ">
+
+            <h2 class="p-4 text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-950 via-red-700 to-red-400">
+                SER VOLUNTARIO O VOLUNTARIA SUPONE:
+            </h2>
+            <ul class=" text-lg font-light">
+                <li>
+                    -Actuar de acuerdo con los principios fundamentales de Cruz Roja.
+                </li>
+                <li>
+                    - Realizar una acción en beneficio de la comunidad.
+                </li>
+                <li>
+                    - Actuar de acuerdo con un programa de acción.
+                </li>
+                <li>
+                    
+                    -Tomar una decisión reflexiva y responsable escogida libremente.
+                </li>
+                <li>
+                    
+                    -Trabajar generalmente en grupo y de forma organizada.
+                </li>
+                <li>
+                    
+                    -Tener una actitud solidaria y participativa.
+                </li>
+                <li>
+                    -Adquirir la formación necesaria para el desarrollo de las actividades.
+                </li>
+                <li >
+                    
+                    -Dotados de reciprocidad significa que el voluntario o voluntaria tiene el derecho de estar informado y, a la vez, el deber de informarse e informar.
+                </li>
+            </ul>
+        </div>
+        </div>
+    
+    
+</div>
+    
+</Layout>

@@ -23,7 +23,7 @@ export const MotionEffectImageGridDemo = () => {
       <div>
         <MotionEffect slide fade zoom inView delay={0}>
           <img
-            className=" sm:mx-36  rounded-lg cursor-pointer hover:brightness-90"
+            className=" sm:mx-36  rounded-lg cursor-pointer hover:brightness-75"
             src={featured}
             alt=""
             onClick={() => setSelectedImage(featured)}
@@ -35,7 +35,7 @@ export const MotionEffectImageGridDemo = () => {
           <div key={index}>
             <MotionEffect slide fade zoom inView delay={0.6 + index * 0.1}>
               <img
-                className="h-full w-full sm:mx-28 rounded-lg cursor-pointer hover:brightness-90"
+                className="h-full w-full sm:mx-28 rounded-lg cursor-pointer hover:brightness-75"
                 src={src}
                 alt=""
                 onClick={() => setSelectedImage(src)}
