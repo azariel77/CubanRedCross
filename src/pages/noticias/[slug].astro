@@ -1,0 +1,18 @@
+---
+import { getEntryBySlug } from 'astro:content';
+import Layout from '../../components/Layout.astro';
+import { AstroError } from 'astro/errors';
+const { slug } = Astro.params;
+const noticia = await getEntryBySlug('noticias', slug);
+if (!noticia) throw new AstroError('Noticia no encontrada');
+const { Content, data } = noticia;
+---
+
+<Layout titulo={data.title}>
+  <article class="max-w-3xl mx-auto px-4 py-10 prose">
+    <h1>{data.title}</h1>
+    <p class="text-sm text-gray-500">{data.date.toLocaleDateString()}</p>
+    {data.image && <img src={data.image} alt={data.title} class="my-4 rounded-xl" />}
+    <Content />
+  </article>
+</Layout>
