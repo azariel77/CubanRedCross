@@ -18,9 +18,9 @@ export interface Props {
     <meta name="author" content="Cruz Roja Cubana">
      <title>{titulo}</title>
 </head>
-<body class="flex flex-col  w-full">
-    
-    <main class="flex-grow mt-16">
+<body class="flex flex-col min-h-screen  w-full">
+    <Header></Header>
+    <main class="flex-grow mt-16 min-h-screen">
         <slot />
     </main>
     <Footer class="" ></Footer>

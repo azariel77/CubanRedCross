@@ -9,7 +9,6 @@ const noticias: { data: { date: Date; title: string; summary: string }; slug: st
 ---
 
 <Layout titulo="Noticias de la Cruz Roja Cubana">
-    <Header></Header>   
     
     <section class="grid grid-cols-1 md:grid-cols-2 gap-6 p-4">
         {noticias
@@ -27,13 +26,3 @@ const noticias: { data: { date: Date; title: string; summary: string }; slug: st
 
     </Layout>
 
-<style>
-    .noticia {
-        border: 1px solid #ccc;
-        padding: 16px;
-        margin-bottom: 16px; 
-        border-radius: 8px;
-    }
-    .noticia h2 {
-        margin-top: 0;
-    }
