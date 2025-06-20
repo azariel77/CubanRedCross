@@ -1,0 +1,71 @@
+---
+import Header from "../components/header.astro"
+import Layout from "../components/Layout.astro"
+
+const {titulo} = Astro.props 
+---
+
+<Layout titulo="Historia de la Cruz Roja Cubana">
+    <Header></Header>
+  <section class="min-h-screen   px-4 py-20 bg-gradient-to-br from-white to-red-50">
+    <div class="mx-24 animate-fade-in-up px-4">
+      <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-red-950 via-red-700 to-red-400 text-white mb-6 tracking-tight animate-slide-in">
+        Derecho Internacional Humanitario
+      </h1>
+      <p class="text-gray-800 text-lg text-justify leading-relaxed tracking-wide   ">
+          
+
+Esta actividad en la Sociedad Nacional Cubana de la Cruz Roja resulta uno de los sustentos fundamentales de la accion humanitaria en el plano ideologico y tributa su accion a todos los demas frentes de trabajo, por lo que se identifica como un eje transversal.<br>
+Responde por dar a conocer los principios fundamentales del movimiento, por transmitir los valores humanitarios que resultan de su accion y por difundir el Derecho Internacional Humanitario entre el voluntariado de Cruz Roja y el publico externo.<br>
+Para la realizacion de esta importante actividad cuenta con una Red Nacional de difusores, que formando parte del voluntariado tienen su actividad centrada en esta especialidad desarrolandola en cada estructura territorial y en la Sede Nacional.<br>
+Los difusores en su actividad trabajan tambien asesorando a todas las especialidades de la Cruz Roja y a su voluntariado en general, para que sean respetados y aplicados los principios fundamentales del movimiento, propician la formacion de valores, trabajan por garantizar el uso adecuado del emblema y por dar a conocer el DIH.<br>
+En su labor externa utilizan alianzas estrategicas con asociaciones profesionales y circulos academicos, perticipando con ellos en la ejecucion y promocion especialmente del DIH, a traves de post grados, diplomados- seminarios y talleres.<br>
+LOS PRINCIPIOS DE DERECHO INTERNACIONAL HUMANITARIO:<br>
+
+El 22 de Agosto de 1864 se aprobó convenio de Ginebra (El 1ro del Derecho Internacional Humanitario) en sus 10 de artículos, se elaboró un principio humanitario de asistencia, que abarcó no solo la atención a la persona victima de guerra, si no que estableció normas de conducta, respeto y neutralidad para garantizar esa asistencia, al proteger a las personas y los medios que se dedicaban a esa acción de socorros.<br>
+Se dice que el DIH tiene la finalidad primordial de tratar de hacer escuchar la voz de la razón en situaciones en que las armas acallan la conciencia de los hombres, recordarles que un ser humano, incluso enemigo, sigue siendo una persona digna de respeto y compasión. La conocida cláusula enunciada en 1899 por Frederic Mantins del derecho de la guerra presentan un principio general humanitario cuando expresa “la personas civiles y los combatientes quedan bajo la protección y el imperio de los principios del derecho de gentes derivados de los usos establecidos, de los principios de humanidad y los dictados de la conciencia pública”.<br>
+Los principios del derecho humanitario al igual que los Principios del movimiento internacional de la Cruz Roja constituyen un poderoso sustento ideológico y expresa normas éticas y de conducta que incorporados a la conciencia del hombre le proporcionan la fortaleza para la acción humanitaria, aspiramos a promover estos principios universalmente para lograr un mundo mejor.
+      
+       
+      </p>
+    </div>
+  </section>
+
+  <style>
+    @keyframes fade-in-up {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fade-in-up 0.8s ease-out both;
+    }
+
+    @keyframes slide-in {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-slide-in {
+      animation: slide-in 0.6s ease-out both;
+      animation-delay: 0.3s;
+    }
+
+    /* Justificar también la última línea de texto */
+    .text-align-last-justify {
+      text-align-last: justify;
+    }
+  </style>
+</Layout>
