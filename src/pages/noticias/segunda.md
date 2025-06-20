@@ -5,7 +5,7 @@ summary: "Resumen de prueba para el sistema de noticias en Astro."
 image: "segunda.jpg" 
 layout: ../../components/Layout.astro
 ---
-![Ejemplo de Imagen](./noticias-imagenes/segunda.jpg)
+![Ejemplo de Imagen](/noticias-imagenes/segunda.jpg)
 
 <div style="margin: 20px;">
 
