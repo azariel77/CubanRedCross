@@ -112,12 +112,14 @@ const noticias= await Astro.glob('./noticias/*.md')
 
 				{
 					noticias.map(noticia=>{
-						return <a href={noticia.url}class="sm:mx-4 mb-3 " ><div class="bg-gray-300/10  p-4 mb-1  transition-transform duration-200 w-72 h-72 sm:size-full  overflow-hidden text-center ml-24 sm:ml-0 animate-slideInLeft  col-span-1">
-							 <img src={noticia.frontmatter.image} alt=""/>
-							<h2 class="text-xl font-semibold mb-2 text-transparent bg-clip-text bg-gradient-to-tr from-red-950 via-red-700 to-red-400">{noticia.frontmatter.title}</h2>
-							<p>{noticia.frontmatter.summary}</p>
-							<h3>{noticia.frontmatter.date}</h3>
-							</div></a>
+						return <a href={noticia.url} class="sm:mx-4 mb-3">
+							<div class="bg-gray-300/30 p-4 mb-1  w-72 h-72 sm:size-full overflow-hidden text-center ml-24 sm:ml-0 animate-slideInLeft col-span-1 principio-card opacity-0 translate-y-10 transition-all duration-500 ease-out">
+								<img src={`/src/pages/noticias/noticias-imagenes/${noticia.frontmatter.image}`} alt="" />
+								<h2 class="text-xl font-semibold mb-2 text-transparent bg-clip-text bg-gradient-to-tr from-red-950 via-red-700 to-red-400">{noticia.frontmatter.title}</h2>
+								<p>{noticia.frontmatter.summary}</p>
+								<p class="text-xs">{noticia.frontmatter.date}</p>
+							</div>
+						</a>
 					})
 				}
 			</div>
@@ -129,17 +131,7 @@ const noticias= await Astro.glob('./noticias/*.md')
 
 
 
-<style>
-    .noticia {
-		border: 1px solid #ccc;
-        padding: 16px;
-        margin-bottom: 16px; 
-        border-radius: 8px;
-    }
-    .noticia h2 {
-        margin-top: 0;
-    }
-</style>
+
 
 <script type="module">
   const observer = new IntersectionObserver((entries, obs) => {
